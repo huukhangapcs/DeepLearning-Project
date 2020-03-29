@@ -16,5 +16,7 @@ model.compile(optimizer='adam',
 model.fit(x_train,y_train,epochs =3)
 val_loss, val_acc = model.evaluate(x_test,y_test)
 print(val_loss,val_acc)
+model.save('mnist')
+newmodel = tf.keras.models.load_models('mnist')
 #plt.imshow(x_train[0], cmap = plt.cm.binary)
 #plt.show()
